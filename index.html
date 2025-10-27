@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=BBH+Sans+Bogle&family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Egger Haus</title>
+</head>
+<body>
+    
+
+    <header class="page-nav">
+        <a href="index.html">
+            <h1>EGGER HAUS</h1>
+        </a>
+        <button class="hamburger" aria-label="Menú" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav id="main-nav">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Catalogo.html">Catálogo</a></li>
+                <li><a href="Nosotros.html">Nosotros</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="home-container">
+        <div class="home-left">
+            <img id="mainImage" src="mueble_1.png" alt="Mueble" />
+            <div class="nav-buttons">
+                <button onclick="prevImage()">←</button>
+                <button onclick="nextImage()">→</button>
+            </div>
+        </div>
+
+        <div class="home-right">
+            <h1>EGGER HAUS</h1>
+            <p>Diseños de interiores modernos y elegantes hechos a tu medida. Conoce nuestros muebles de melamina y transforma tus espacios.</p>
+            <a href="#" id="login-link" class="catalogo-btn">INICIAR SESIÓN</a>
+        </div>
+    </div>
+    <!--Inicio de sesion-->
+    <div id="login-modal" class="login-modal">
+        <div class="login-modal-content">
+            <span class="close">&times;</span>
+            <h2>INICIAR SESIÓN</h2>
+            <form id="login-form">
+                <input type="email" placeholder="Correo electrónico" required><br><br>
+                <input type="password" placeholder="Contraseña" required><br><br>
+                <button type="submit">Entrar</button>
+            </form>
+            <p class="signup-link">¿No tienes cuenta? <a href="#" id="create-acount-link">Crea una</a></p>
+            <button type="button" id="google-login" class="google-btn">
+                <i class="fab fa-google"></i> Iniciar sesión con google
+            </button>
+        </div>
+    </div>
+    <footer class="site-footer">
+        <div class="social-icons">
+            <a href="https://www.instagram.com/tuusuario" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/tuusuario" target="_blank" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://twitter.com/tuusuario" target="_blank" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://wa.me/59176716759" target="_blank" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+        <p>&copy; 2025 Egger Haus. Todos los derechos reservados.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!--Si me hubieras avisado mas antes TODO lo huebieramos hecho mucho mejor pero en fin esto pude hacer, seguire haciendo la parte del backend pero vos tambien hazlo por si yo no acabo-->
+
