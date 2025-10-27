@@ -2,8 +2,8 @@
 // config.php
 $host = 'sql111.infinityfree.com';
 $dbname = 'if0_40261677_adrianacami';
-$username = 'si0_40261677';      // Cambia si usas otro usuario
-$password = 'rafofercho123';          // Cambia si tu BD tiene contraseña
+$username = 'si0_40261677';      
+$password = 'rafofercho123';      
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
@@ -12,3 +12,4 @@ try {
     die("Conexión fallida: " . $e->getMessage());
 }
 ?>
+
