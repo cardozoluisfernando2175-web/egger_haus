@@ -13,82 +13,71 @@
         <a href="index.html">
             <h1>EGGER HAUS</h1>
         </a>
-        <button class="hamburger" aria-label="Menú" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <nav id="main-nav">
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="Catalogo.html">Catálogo</a></li>
-                <li><a href="Nosotros.html">Nosotros</a></li>
-            </ul>
-        </nav>
     </header>
-    <div class="page-content">
-        <div class="product-container" data-nombre="Mueble de cocina flotante" data-precio="$109" data-descripcion="Mueble de cocina flotante moderno, ideal para cocinas pequeñas. Fabricado en melamina resistente. Medidas: 120x60x40 cm.">
-            <h3>Mueble de cocina flotante</h3>
-            <img src="mueble_1.png" />
-            <h2>$109</h2>
-            <button class="button-add" data-nombre="Mueble de cocina flotante" data-precio="$109">Reservar</button>
+
+    <div class="home-container">
+        <div class="home-left">
+            <img id="mainImage" src="mueble_1.png" alt="Mueble" />
+            <div class="nav-buttons">
+                <button onclick="prevImage()">←</button>
+                <button onclick="nextImage()">→</button>
+            </div>
         </div>
 
-        <div class="product-container" data-nombre="Mueble de cocina (mesones)" data-precio="$139" data-descripcion="Mueble completo para cocinas minimalistas, con detalles modernos y materiales de la más alta calidad">
-            <h3>Mueble de cocina (mesones)</h3>
-            <img src="mueble_2.png" />
-            <h2>$139</h2>
-            <button class="button-add" data-nombre="Mueble de cocina (mesones)" data-precio="$139">Reservar</button>
-        </div>
-
-        <div class="product-container" data-nombre="Mueble de cocina completo" data-precio="$149" data-descripcion="Muebles bien estructurados para cocina moderna con diseños minimalistas hecho con la mejor melamina de todo el país">
-            <h3>Mueble de cocina completo</h3>
-            <img src="mueble_3.png" />
-            <h2>$149</h2>
-            <button class="button-add" data-nombre="Mueble de cocina completo" data-precio="$149">Reservar</button>
-        </div>
-
-        <div class="product-container" data-nombre="Living" data-precio="$139">
-            <h3>Living</h3>
-            <img src="mueble_4.png" />
-            <h2>$139</h2>
-            <button class="button-add" data-nombre="Living" data-precio="$139">Reservar</button>
-        </div>
-
-        <div class="product-container" data-nombre="Mesa para sala minimalista" data-precio="$39">
-            <h3>Mesa para sala minimalista</h3>
-            <img src="mueble_5.png" />
-            <h2>$39</h2>
-            <button class="button-add" data-nombre="Mesa para sala minimalista" data-precio="$39">Reservar</button>
-        </div>
-
-        <div class="product-container" data-nombre="Muebleria para baño" data-precio="$99">
-            <h3>Muebleria para baño</h3>
-            <img src="mueble_6.png" />
-            <h2>$99</h2>
-            <button class="button-add" data-nombre="Muebleria para baño" data-precio="$99">Reservar</button>
+        <div class="home-right">
+            <h1>EGGER HAUS</h1>
+            <p>Diseños de interiores modernos y elegantes hechos a tu medida. Conoce nuestros muebles de melamina y transforma tus espacios.</p>
+            <a href="#" id="login-link" class="catalogo-btn">INICIAR SESIÓN</a>
         </div>
     </div>
-    
-    <div id="product-modal" class="modal">
-        <div class="modal-content">
+
+    <!-- Modal de Autenticación -->
+    <div id="auth-modal" class="login-modal">
+        <div class="login-modal-content">
             <span class="close">&times;</span>
-            <div class="modal-body">
-                <div class="modal-image">
-                    <img id="modal-img" src="" alt="Imagen del producto">
+
+            <!-- Login -->
+            <div id="login-section">
+                <h2>INICIAR SESIÓN</h2>
+                <form id="login-form">
+                    <input type="email" placeholder="Correo electrónico" required><br><br>
+                    <input type="password" placeholder="Contraseña" required><br><br>
+                    <button type="submit">Entrar</button>
+                </form>
+                <p class="signup-link">¿No tienes cuenta? <a href="#" id="show-register">Crea una</a></p>
+                
+                <!-- Google Login -->
+                <div class="google-login-container">
+                    <div id="g_id_onload"
+                        data-client_id="363811263799-g9k7eercklds2c1o34s4m39bgl7prq74.apps.googleusercontent.com"
+                        data-callback="handleCredentialResponse"
+                        data-auto_select="false"
+                        data-cancel_on_tap_outside="true">
+                    </div>
+                    <div class="g_id_signin"
+                        data-type="standard"
+                        data-size="large"
+                        data-theme="outline"
+                        data-text="sign_in_with"
+                        data-shape="rectangular"
+                        data-logo_alignment="left">
+                    </div>
                 </div>
-                <div class="modal-info">
-                    <h3 id="modal-title">Nombre del producto</h3>
-                    <p id="modal-price">$0</p>
-                    <p id="modal-description">
-                        Descripción no disponible.
-                    </p>
-                    <button class="button-add" id="modal-reserve">Reservar</button>
-                </div>
+            </div>
+
+            <!-- Registro -->
+            <div id="register-section" style="display: none;">
+                <h2>CREAR CUENTA</h2>
+                <form id="register-form">
+                    <input type="email" placeholder="Correo electrónico" required><br><br>
+                    <input type="password" placeholder="Contraseña (mín. 6 caracteres)" minlength="6" required><br><br>
+                    <button type="submit">Registrarse</button>
+                </form>
+                <p class="signup-link">¿Ya tienes cuenta? <a href="#" id="show-login">Inicia sesión</a></p>
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
+
     <footer class="site-footer">
         <div class="social-icons">
             <a href="https://www.instagram.com/tuusuario" target="_blank" aria-label="Instagram">
@@ -106,5 +95,9 @@
         </div>
         <p>&copy; 2025 Egger Haus. Todos los derechos reservados.</p>
     </footer>
+
+    <!-- Google Identity Services -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="script.js"></script>
 </body>
 </html>
